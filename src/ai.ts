@@ -92,6 +92,7 @@ export class OpenAIGen extends AIGen {
 
             log(`Using OpenAI model: ${model}`);
             log(`Calling OpenAI API with endpoint: ${endpoint}`);
+            console.log(apiKey)
 
             if (apiKey == "" || apiKey == undefined) {
                 log("[*] Warning: OpenAI API key is not set! Set via '--openaiAPIKey' flag or define 'OPENAI_API_KEY' environment variable.");
@@ -106,18 +107,25 @@ export class OpenAIGen extends AIGen {
                 { role: 'user', content: systemPrompt },
                 { role: 'user', content: INITIAL_AI_PROMPT + userPrompt }
             ];
-
             const response = await client.chat.completions.create({
-                max_tokens: 1024,
-                model: model,
-                messages: messages as OpenAI.ChatCompletionMessageParam[],
-                response_format: { "type": "json_object" }
+            max_tokens: 4096,
+            model,
+            messages: messages as OpenAI.ChatCompletionMessageParam[],
+            response_format: { type: "json_object" },
             });
+
+            console.log("RAW RESPONSE:", response);
+            console.log("RAW RESPONSE:", response.choices[0].message.content);
+
+
 
             let aiResponse = '';
             let videoType = '';
 
-            videoType = response.choices[0].message.content ?? "";
+            videoType =(response.choices[0].message.content ?? "").trim();
+                        if (!videoType) {
+            throw new Error("Empty response from OpenAI (videoType).");
+            }
 
             messages.push({ role: 'assistant', content: videoType });
 

@@ -94,10 +94,10 @@ export interface APIVoiceOptions {
 
 // Default video options
 export const defaultVideoOptions: VideoOptions = {
-    aiType: "OllamaAIGen",
-    aiModel: "llama3.2",
-    voiceGenType: "BuiltinTTS",
-    imageGenType: "GoogleScraper",
+    aiType: "GoogleAIGen",
+    aiModel: "gemini-2.5-flash",
+    voiceGenType: "ElevenLabs",
+    imageGenType: "Pexels",
     orientation: "vertical",
     useBgMusic: true,
     useBgVideo: true,
@@ -108,6 +108,22 @@ export const defaultVideoOptions: VideoOptions = {
         useMock: false,
     },
 };
+// // Default video options
+// export const defaultVideoOptions: VideoOptions = {
+//     aiType: "OllamaAIGen",
+//     aiModel: "llama3.2",
+//     voiceGenType: "BuiltinTTS",
+//     imageGenType: "GoogleScraper",
+//     orientation: "vertical",
+//     useBgMusic: true,
+//     useBgVideo: true,
+//     internalOptions: {
+//         changePhotos: true,
+//         disableTTS: false,
+//         disableSubtitles: false,
+//         useMock: false,
+//     },
+// };
 
 // Backend models
 
