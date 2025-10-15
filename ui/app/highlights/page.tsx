@@ -52,7 +52,7 @@ export default function HighlightsPage() {
             href="/"
             className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
           >
-            MindShorts
+            MediaMind
           </Link>
           <div className="flex items-center gap-4">
             <span className="text-sm text-gray-300">Highlights Generator</span>

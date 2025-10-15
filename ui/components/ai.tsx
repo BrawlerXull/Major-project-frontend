@@ -110,11 +110,6 @@ export default function AIGen() {
                     ))}
                 </div>
                 <Divider />
-                <Accordion>
-                    <AccordionItem startContent={<FaCogs />} title="Advanced Options" subtitle='Change options such as AI model, TTS voice, background music, etc.'>
-                        <AdvancedOptions setAdvancedOptions={setAdvancedOptions} />
-                    </AccordionItem>
-                </Accordion>
                 <Button startContent={<FaMagic />} variant='shadow' color='primary' size="lg" onClick={openModal}>Render Video</Button>
                 <ConfirmModal confirmModal={confirmModal} advancedOptions={advancedOptions} renderVideo={renderVideo} usedDefaultOptions={usedDefaultOptions} />
             </div>
