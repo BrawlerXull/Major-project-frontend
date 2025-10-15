@@ -41,47 +41,44 @@ export default function ClipsDisplay({ clips, jobId }: ClipsDisplayProps) {
   }
 
   const getViralScoreColor = (score: number) => {
-    if (score >= 8) return "text-green-600"
-    if (score >= 6) return "text-blue-600"
-    if (score >= 4) return "text-yellow-600"
-    return "text-orange-600"
+    if (score >= 8) return "text-green-300"
+    if (score >= 6) return "text-blue-300"
+    if (score >= 4) return "text-yellow-300"
+    return "text-orange-300"
   }
 
   return (
     <div className="space-y-4">
-      <h2 className="text-xl font-semibold text-[#37322F]">Generated Clips</h2>
+      <h2 className="text-xl font-semibold text-white">Generated Clips</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {clips.map((clip) => (
           <Card
             key={clip.clip_id}
-            className="p-4 border border-[rgba(55,50,47,0.12)] hover:shadow-md transition-shadow"
+            className="p-4 border border-white/10 bg-white/5 hover:bg-white/10 transition-all backdrop-blur-sm"
           >
             <div className="space-y-3">
-              {/* Clip Title */}
               <div>
-                <h3 className="font-semibold text-[#37322F] line-clamp-2">{clip.title}</h3>
+                <h3 className="font-semibold text-white line-clamp-2">{clip.title}</h3>
               </div>
 
-              {/* Clip Stats */}
               <div className="flex items-center justify-between text-sm">
                 <div className="flex items-center gap-4">
                   <div>
-                    <p className="text-[#605A57] text-xs">Duration</p>
-                    <p className="font-medium text-[#37322F]">{clip.duration.toFixed(1)}s</p>
+                    <p className="text-gray-400 text-xs">Duration</p>
+                    <p className="font-medium text-white">{clip.duration.toFixed(1)}s</p>
                   </div>
                   <div>
-                    <p className="text-[#605A57] text-xs">Viral Score</p>
+                    <p className="text-gray-400 text-xs">Viral Score</p>
                     <p className={`font-bold text-lg ${getViralScoreColor(clip.viral_score)}`}>{clip.viral_score}/10</p>
                   </div>
                 </div>
               </div>
 
-              {/* Download Button */}
               <Button
                 onClick={() => handleDownload(clip)}
                 disabled={downloadingClip === clip.clip_id}
-                className="w-full bg-[#37322F] hover:bg-[#322D2B] text-white font-medium py-2 rounded-lg transition-colors disabled:opacity-50"
+                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-lg hover:shadow-blue-500/50 text-white font-medium py-2 rounded-lg transition-all disabled:opacity-50"
               >
                 {downloadingClip === clip.clip_id ? "Downloading..." : "Download"}
               </Button>

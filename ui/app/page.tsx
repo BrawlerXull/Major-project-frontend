@@ -47,7 +47,7 @@ export default function LandingPage() {
       <nav className="fixed top-0 w-full z-50 border-b border-white/10 bg-[#0a0e27]/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-            Brillance
+            MediaMind
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-sm text-gray-300 hover:text-white transition">
@@ -89,11 +89,14 @@ export default function LandingPage() {
               href="/highlights"
               className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition transform hover:scale-105"
             >
-              Start Creating
+              Generate Highlights
             </Link>
-            <button className="px-8 py-4 border border-white/20 rounded-full font-semibold hover:bg-white/5 transition">
-              Watch Demo
-            </button>
+            <Link
+              href="/aivideo"
+              className="px-8 py-4 border border-white/20 rounded-full font-semibold hover:bg-white/5 transition"
+            >
+              Generate AI Videos
+            </Link>
           </div>
 
           {/* Hero Visual */}
@@ -253,7 +256,7 @@ export default function LandingPage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">Ready to Create?</h2>
           <p className="text-xl text-gray-300 mb-8">
-            Join thousands of creators using Brillance to generate viral content
+            Join thousands of creators using MediaMind to generate viral content
           </p>
           <Link
             href="/highlights"
@@ -350,7 +353,7 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="border-t border-white/10 pt-8 text-center text-gray-400 text-sm">
-            <p>&copy; 2025 Brillance. All rights reserved.</p>
+            <p>&copy; 2025 MediaMind. All rights reserved.</p>
           </div>
         </div>
       </footer>
