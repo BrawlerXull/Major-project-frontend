@@ -7,10 +7,13 @@ import { Chip } from "@nextui-org/chip";
 import { VideoOptions } from "@/config/options";
 
 import { FaCog, FaCogs, FaFileAudio, FaImage, FaTextWidth } from "react-icons/fa";
+import { useEffect } from "react";
 
 export function ConfirmModal({ confirmModal, usedDefaultOptions, advancedOptions, renderVideo }:
     { confirmModal: ReturnType<typeof useDisclosure>, usedDefaultOptions: boolean, advancedOptions: VideoOptions | null, renderVideo: () => void }
 ) {
+
+
     return (
         <Modal isOpen={confirmModal.isOpen} onOpenChange={confirmModal.onOpenChange} size="2xl">
             <ModalContent>

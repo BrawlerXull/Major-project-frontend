@@ -65,16 +65,19 @@ export default function AIGen() {
         }
     }
 
-    function openModal() {
-        // Check if advanced options are selected, if not, set it to default values
-        if (advancedOptions === defaultVideoOptions) setUsedDefaultOptions(true);
-        confirmModal.onOpen();
-    }
 
     function renderVideo() {
         setIsAIRunning(true);
         fetchAI();
     }
+
+    function openModal() {
+        // Check if advanced options are selected, if not, set it to default values
+        if (advancedOptions === defaultVideoOptions) setUsedDefaultOptions(true);
+        renderVideo();
+        // confirmModal.onOpen();
+    }
+
 
     const promptSuggestions = [
         'news topic about the world',
