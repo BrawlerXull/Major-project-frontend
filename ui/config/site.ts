@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Auto Shorts UI",
+  name: "Media Mind UI",
   description: "Generate short videos with help of AI",
   navItems: [
     {

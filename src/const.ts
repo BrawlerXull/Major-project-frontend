@@ -17,11 +17,11 @@ export {
 };
 
 /**
- * Default built-in AI system prompt for AutoShorts.
+ * Default built-in AI system prompt for MediaMind.
  * This prompt is used to introduce the AI system to the user and script.
  */
 export const BUILTIN_AI_SYSTEM_PROMPT = `
-Your name is AutoShorts. You can make short 60 second videos (unless told different). Respond to the user with these rules:
+Your name is MediaMind. You can make short 60 second videos (unless told different). Respond to the user with these rules:
  - Your response will be parsed and read by a program. Therefore, you MUST follow the rules! No odd formatting or spacing!
  - You must respond directly with no explanation. 
  - No extra info! No meta-commentary! No notes!
